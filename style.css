@@ -1,0 +1,505 @@
+/* General Body and HTML Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Dark background for gaming feel */
+    color: #e0e0e0; /* Light text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+*/
+
+/*Navbar Styling*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0f1a; /* Darker background for navbar */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 2rem;
+}
+
+.navbar-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #e0e0e0;
+    background-color: #4a0a4a; /* Highlight on hover/active */
+    transform: translateY(-3px);
+}
+
+/*Main Content Layout*/
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Ensure content is above background */
+}
+
+/*Hero Section (Home Page)*/
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-logo-container {
+    border-radius: 50%; /* Circular card for logo */
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero-logo-container:hover {
+    transform: scale(1.05); /* Hover effect */
+}
+
+.big-gaming-logo {
+    width: 250px; /* Big logo size */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(147, 112, 219, 0.6); /* Border around the logo */
+}
+
+.hero-text-container {
+    max-width: 700px;
+    text-align: left; /* Align text to the left */
+}
+
+.hero-text-container h1 {
+    font-size: 2.8rem;
+    color: #9370db; /* Purple heading */
+    margin-bottom: 1rem;
+}
+
+.hero-text-container p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    margin-bottom: 1rem;
+}
+
+/* Social Links Section (Home Page)*/
+.social-links-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.social-links-section h2 {
+    font-size: 2.2rem;
+    color: #9370db;
+    margin-bottom: 2rem;
+}
+
+.social-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-card {
+    background-color: #2a0a2a; /* Card background */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent; /* For glow effect */
+    position: relative;
+    overflow: hidden; /* Hide overflow for glow effect */
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--glow-color, #8a2be2) 20%, transparent 40%, transparent 60%, var(--glow-color, #8a2be2) 80%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.6s ease;
+    z-index: -1;
+}
+
+.social-card:hover {
+    transform: translateY(-10px); /* Hover lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+}
+
+.social-card.youtube-color { --glow-color: #ff0000; background-color: #3d0000; }
+
+.social-card.instagram-color { --glow-color: #e4405f; background-color: #4f0015; }
+
+.social-card.x-color { --glow-color: #1da1f2; background-color: #0a203d; }
+
+.social-card.linkedin-color { --glow-color: #0077b5; background-color: #001a2e; }
+
+.social-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.social-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.social-card p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+/*  Skills Page */
+.skills-content, .contact-content {
+    padding-top: 2rem;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: #1f1f3a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-header h2 {
+    font-size: 2.5rem;
+    color: #9370db;
+    margin-bottom: 1rem;
+}
+
+.welcome-header p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+/*Coming Soon*/
+.Coming-Soon{
+    padding-top: 2rem;
+}
+
+.soon {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: #1f1f3a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.soon h2 {
+    font-size: 2.5rem;
+    color: #9370db;
+    margin-bottom: 1rem;
+}
+
+.soon p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Terms of Service Section */
+.tos-section {
+    background-color: #1f1f3a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+}
+
+.tos-section h3 {
+    font-size: 1.8rem;
+    color: #9370db;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4a0a4a;
+    padding-bottom: 0.5rem;
+}
+
+.tos-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: #c0c0c0;
+}
+
+.tos-section li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.tos-section strong {
+    color: #e0e0e0;
+}
+
+/*Contact Page */
+.contact-links-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.contact-links-section h3 {
+    font-size: 2.2rem;
+    color: #9370db;
+    margin-bottom: 2rem;
+}
+
+.contact-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.contact-card {
+    background-color: #2a0a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--contact-glow-color, #8a2be2) 20%, transparent 40%, transparent 60%, var(--contact-glow-color, #8a2be2) 80%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.6s ease;
+    z-index: -1;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Card Glow */
+.contact-card.email-color { --contact-glow-color: #00bcd4; background-color: #0a3d4a; } /* Cyan */
+
+.contact-card.x-contact-color { --contact-glow-color: #1da1f2; background-color: #0a203d; } /* X Blue */
+
+.contact-card.github-contact-color { --contact-glow-color: #6e5494; background-color: #2a1a3a; } /* GitHub Purple */
+
+
+.contact-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+
+/*Footer */
+.footer {
+    background-color: #0f0f1a;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-top: 1px solid #4a0a4a;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive(Media Queries) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-links li {
+        margin-left: 1.5rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+
+    .hero-logo-container {
+        padding: 15px;
+    }
+
+    .big-gaming-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-text-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1rem;
+    }
+
+    .social-cards-container,
+    .contact-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .social-card img, .contact-card img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar-logo {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-links li {
+        margin: 0.5rem 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .big-gaming-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-text-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text-container p {
+        font-size: 0.95rem;
+    }
+
+    .social-cards-container,
+    .contact-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .welcome-header h2 {
+        font-size: 2rem;
+    }
+
+    .welcome-header p {
+        font-size: 1rem;
+    }
+
+    .tos-section h3, .projects-section h3, .contact-links-section h3 {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .navbar-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero-logo-container {
+        padding: 10px;
+    }
+
+    .big-gaming-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-text-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text-container p {
+        font-size: 0.9rem;
+    }
+
+    .social-cards-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .social-card img, .contact-card img {
+        width: 60px;
+        height: 60px;
+    }
+}
